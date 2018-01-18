@@ -1,0 +1,94 @@
+/*
+  # css3-tooltip
+  # Version 1.0.0
+  # Vineeth TR
+*/
+@import "compass/css3";
+*[data-tooltip]{
+  position: relative;
+  &:hover{
+    &:after, &:before{
+      opacity: 1;
+      visibility: visible;
+    }   
+  }
+  &:after, &:before{
+    position: absolute;
+    top: auto;
+    bottom : 100%;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.15s ease-in;
+    z-index: 5;
+  }
+  &:after{
+    content: attr(data-tooltip);
+    background: rgba(0,0,0,.8);
+    padding: 2px 7px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    white-space: nowrap;
+    @include border-radius(4px);
+    @include translate(-50%, -8px);
+  }
+  &:before{
+    content:'';
+    top: auto;
+    bottom: 100%;
+    border: 4px solid transparent;
+    @include translateX(-50%);
+    border-top-color: rgba(0,0,0,.8);
+  }
+  
+   &[data-position="bottom"]{
+    &:after{
+      top: 100%;
+      bottom: auto;
+      @include translate(-50%, 8px);
+    }
+    &:before{
+      top: 100%;
+      bottom: auto;
+      border-color: transparent;
+      border-bottom-color: rgba(0,0,0,.8);
+    }
+  }
+  
+  &[data-position="left"]{
+    &:after{
+      left: 0;
+      bottom: auto;
+      top: 50%;
+      margin-left: -8px;
+      @include translate(-100%, -50%);
+    }
+    &:before{
+      left: 0;
+      bottom: auto;
+      top: 50%;
+      @include translate(-100%, -50%);
+        border-color: transparent;
+        border-left-color: rgba(0,0,0,.8);
+    }
+  }
+    &[data-position="right"]{
+    &:after{
+      left: 100%;
+      bottom: auto;
+      top: 50%;
+      @include translate(8px, -50%);
+    }
+    &:before{
+      left: 100%;
+      top: 50%;
+      bottom: auto;
+      @include translate(0 , -50%);
+        border-color: transparent;
+        border-right-color: rgba(0,0,0,.8);
+    }
+  }
+  
+}
