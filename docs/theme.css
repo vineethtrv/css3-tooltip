@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: arial;
+}
+
+body {
+  padding: 15px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  background: #ddd;
+}
+
+.btn {
+  border: 1px solid #bbb;
+  padding: 7px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: #eee;
+  margin: 3px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+div {
+  margin-top: 25px;
+  padding: 15px;
+  line-height: 22px;
+  font-size: 16px;
+}
+
+h1 {
+  margin: 15px auto 70px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3px;
+  text-align: center;
+  font-weight: 100;
+  color: #fff;
+  width: 260px;
+  font-size: 36px;
+  line-height: 42px;
+  border-radius: 8px;
+  position: relative;
+}
+h1:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 10px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+.center{
+  text-align: center;
+}
+.just{
+  text-align: justify;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+}
+.s { color: #d44950 } /* Literal.String */
+.na { color: #4f9fcf } /* Name.Attribute */
+.nt { color: #2f6f9f; } /* Name.Tag */
+
+.highlight{
+  max-height: 300px;
+  overflow-y: auto;
+}

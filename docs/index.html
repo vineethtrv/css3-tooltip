@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://vineethtr.000webhostapp.com/wp-content/uploads/2018/01/logo.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="https://vineethtr.000webhostapp.com/wp-content/uploads/2018/01/logo.png" />
+    <meta name="msapplication-TileImage" content="https://vineethtr.000webhostapp.com/wp-content/uploads/2018/01/logo.png" />
+
+    <link rel="stylesheet" href="../tooltip.css">
+    <link rel="stylesheet" href="theme.css">
+    <title>CSS3 Tooltip</title>
+
+
+  </head>
+  <body>
+    <div class="container">
+
+        <h1>CSS ToolTip</h1>
+
+        <p>
+          Tooltip is a small information box that appears when the user moves the mouse pointer over
+          an element. This plugin made out of pure CSS3 their is no any requirement of JavaScript
+        </p>
+
+        <p>
+          <a href="#" data-tooltip="I am here" >Hover over me</a>
+        </p>
+
+        <h3> Include tooltip on your project. </h3>
+        <ul>
+          <li>You can download tooltip.css form <a data-tooltip="Download tooltip.css" href="https://github.com/vineethtrv/css3-tooltip/blob/d294d568d0b8d73ba37ec10645fb7a25ebe9aeb8/tooltip.css">here</a></li>
+          <li>Or you can copy css form below</li>
+        </ul>
+
+
+
+        <figure class="highlight"><pre><code><span class="nt">
+           *[data-tooltip] {
+             position: relative;
+           }
+           *[data-tooltip]:hover:after, *[data-tooltip]:hover:before {
+             opacity: 1;
+             visibility: visible;
+           }
+           *[data-tooltip]:after, *[data-tooltip]:before {
+             position: absolute;
+             top: auto;
+             bottom: 100%;
+             left: 50%;
+             opacity: 0;
+             visibility: hidden;
+             -webkit-transition: 0.15s ease-in;
+             transition: 0.15s ease-in;
+             z-index: 5;
+           }
+           *[data-tooltip]:after {
+             content: attr(data-tooltip);
+             background: rgba(0, 0, 0, 0.8);
+             padding: 2px 7px;
+             text-align: center;
+             color: #fff;
+             font-size: 12px;
+             line-height: 16px;
+             white-space: nowrap;
+             border-radius: 4px;
+             -webkit-transform: translate(-50%, -8px);
+             transform: translate(-50%, -8px);
+           }
+           *[data-tooltip]:before {
+             content: '';
+             top: auto;
+             bottom: 100%;
+             border: 4px solid transparent;
+             -webkit-transform: translateX(-50%);
+             transform: translateX(-50%);
+             border-top-color: rgba(0, 0, 0, 0.8);
+           }
+           *[data-tooltip][data-position="bottom"]:after {
+             top: 100%;
+             bottom: auto;
+             -webkit-transform: translate(-50%, 8px);
+             transform: translate(-50%, 8px);
+           }
+           *[data-tooltip][data-position="bottom"]:before {
+             top: 100%;
+             bottom: auto;
+             border-color: transparent;
+             border-bottom-color: rgba(0, 0, 0, 0.8);
+           }
+           *[data-tooltip][data-position="left"]:after {
+             left: 0;
+             bottom: auto;
+             top: 50%;
+             margin-left: -8px;
+             -webkit-transform: translate(-100%, -50%);
+             transform: translate(-100%, -50%);
+           }
+           *[data-tooltip][data-position="left"]:before {
+             left: 0;
+             bottom: auto;
+             top: 50%;
+             -webkit-transform: translate(-100%, -50%);
+             transform: translate(-100%, -50%);
+             border-color: transparent;
+             border-left-color: rgba(0, 0, 0, 0.8);
+           }
+           *[data-tooltip][data-position="right"]:after {
+             left: 100%;
+             bottom: auto;
+             top: 50%;
+             -webkit-transform: translate(8px, -50%);
+             transform: translate(8px, -50%);
+           }
+           *[data-tooltip][data-position="right"]:before {
+             left: 100%;
+             top: 50%;
+             bottom: auto;
+             -webkit-transform: translate(0, -50%);
+             transform: translate(0, -50%);
+             border-color: transparent;
+             border-right-color: rgba(0, 0, 0, 0.8);
+           }
+        </span></code></pre></figure>
+
+
+
+        <h3>Using the CSS3 Tooltip </h3>
+          <p>
+            To create a tooltip, add the data-tooltip=" " attribute to an element and specify the text that should be displayed inside the tooltip:
+          </p>
+
+        <figure class="highlight">
+        <pre><code class="language-html" data-lang="html">
+              <span class="nt">&lt;a</span>  <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-tooltip=</span><span class="s">"I am here..!"</span><span class="nt">&gt;</span>Hover over me<span class="nt">&lt;/a&gt;</span>
+      </code></pre>
+        <p>Result :
+          <a href="#" data-tooltip="I am here" >Hover over me</a>
+        </p>
+      </figure>
+
+      <h3>Positioning Tooltips</h3>
+      <p>
+        By default, the tooltip will appear on top of the element.
+        Use the data-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element:
+      </p>
+
+      <div class="center">
+        <button class="btn" data-position="left"  data-tooltip="Tooltip on left">Tooltip on left</button>
+        <button class="btn"  data-tooltip="Tooltip top">Tooltip on top</button>
+        <button class="btn" data-position="bottom"  data-tooltip="Tooltip on bottom">Tooltip on bottom</button>
+        <button class="btn"  data-position="right" data-tooltip="Tooltip on right">Tooltip on right</button>
+      </div>
+
+
+      <figure class="highlight"><pre><code class="language-html" data-lang="html">
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-placement=</span><span class="s">"left"</span> <span class="na">data-tooltip=</span><span class="s">"Tooltip on left"</span><span class="nt">&gt;</span>Tooltip on left<span class="nt">&lt;/button&gt;</span>
+
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>   <span class="na">data-placement=</span><span class="s">"top"</span> <span class="na">data-tooltip=</span><span class="s">"Tooltip on top"</span><span class="nt">&gt;</span>Tooltip on top<span class="nt">&lt;/button&gt;</span>
+
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>   <span class="na">data-placement=</span><span class="s">"bottom"</span> <span class="na">data-tooltip=</span><span class="s">"Tooltip on bottom"</span><span class="nt">&gt;</span>Tooltip on bottom<span class="nt">&lt;/button&gt;</span>
+
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>   <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na"> data-tooltip=</span><span class="s">"Tooltip on right"</span><span class="nt">&gt;</span>Tooltip on right<span class="nt">&lt;/button&gt;</span>
+      </code></pre>
+
+    </figure>
+
+
+    </div>
+  </body>
+</html>
