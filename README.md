@@ -2,10 +2,12 @@
 Tooltip is a small information box that appears when the user moves the mouse pointer over an element. This plugin made out of pure CSS3 their is no any requirement  JavaScript 
 
 ## Getting Started
-Include [tooltip.css](https://github.com/vineethtrv/Bootstrap-vertical-carousel/blob/master/vertical-carousel.css) on your project.
+Include [tooltip.css](https://github.com/vineethtrv/css3-tooltip/blob/master/tooltip.css) on your project.
 
-- [Plugin Demo]
+- [Plugin Demo](https://vineethtrv.github.io/css3-tooltip/)
 - [codepen](https://codepen.io/vineethtr/pen/rVjWMx)
+
+![alt text](https://raw.githubusercontent.com/vineethtrv/css3-tooltip/master/tooltip.gif)
 
 ## Using the CSS3 Tooltip
 
